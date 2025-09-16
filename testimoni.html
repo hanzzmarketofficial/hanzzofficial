@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Testimoni — Hanzz Market</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');:root{
+  --bg:#0a0a0a;
+  --card:#121212;
+  --accent:#00e676;
+  --muted:#9aa0a6;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Press Start 2P',cursive;
+  background:linear-gradient(180deg,var(--bg),#000);
+  color:#f0f0f0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:30px 20px;
+}
+
+header{text-align:center;margin-bottom:30px}
+h1{font-size:18px;color:var(--accent);margin-bottom:10px;text-shadow:0 0 6px var(--accent)}
+p{font-size:10px;color:var(--muted)}
+
+.container{max-width:800px;width:100%;display:flex;flex-direction:column;gap:20px}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+  position:relative;
+}
+.card::before{
+  content:"★";
+  position:absolute;
+  top:12px;right:12px;
+  color:var(--accent);
+  font-size:12px;
+  text-shadow:0 0 6px var(--accent);
+}
+
+.text{
+  font-size:10px;
+  line-height:1.6;
+}
+
+footer{margin-top:40px;font-size:9px;color:var(--muted);text-align:center}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>💬 Testimoni Pelanggan</h1>
+    <p>Beberapa ulasan dari pelanggan setia kami</p>
+  </header>  <div class="container">
+    <div class="card">
+      <div class="text">𝙿𝚎𝚕𝚊𝚢𝚊𝚗𝚊𝚗 𝚁𝚊𝚖𝚊𝚑 𝙱𝚊𝚗𝚐𝚎𝚝, 𝙶𝚊𝚗𝚝𝚎𝚗𝚐 𝙹𝚞𝚐𝚊 𝚈𝚊𝚗𝚐 Layanin🥰</div>
+    </div><div class="card">
+  <div class="text">𝙿𝚛𝚘𝚍𝚞𝚔 𝙽𝚢𝚊 𝙱𝚎𝚛𝚔𝚎𝚕𝚊𝚜 𝙱𝚊𝚗𝚐𝚎𝚝, 𝚃𝚎𝚜𝚝𝚒𝚖𝚘𝚗𝚒 𝙹𝚞𝚐𝚊 𝚋𝚊𝚗𝚢𝚊𝚔 𝙻𝚊𝚐𝚒</div>
+</div>
+
+<div class="card">
+  <div class="text">𝙰𝚖𝚊𝚗𝚊𝚑, 𝚂𝚊𝚗𝚐𝚊𝚝 𝚁𝚎𝚌𝚘𝚖𝚖𝚎𝚗𝚍</div>
+</div>
+
+  </div>  <footer>
+    © 2025 Hanzz Market. Semua hak dilindungi.
+  </footer>
+</body>
+</html>
