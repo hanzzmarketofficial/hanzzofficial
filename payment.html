@@ -1,0 +1,214 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hanzz Market — Payment</title>
+  <!-- Arcade-like font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#09090b;
+      --card:#0f1113;
+      --accent:#00ff9c;
+      --muted:#9aa2a6;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Press Start 2P', monospace;
+      background:linear-gradient(180deg,var(--bg),#050506 120%);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .wrap{
+      width:980px;
+      max-width:96vw;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:14px;
+      padding:28px;
+      box-shadow:0 8px 40px rgba(0,0,0,0.7);
+      display:grid;
+      grid-template-columns:360px 1fr;
+      gap:22px;
+    }
+    header{grid-column:1/3; display:flex; justify-content:space-between; align-items:center}
+    h1{font-size:18px; color:var(--accent); margin:0}
+    p.lead{margin:6px 0 0; color:#7b8b8e; font-size:11px}.qr-card{
+  background:var(--card);
+  padding:16px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.03);
+  display:flex; flex-direction:column; align-items:center; gap:12px;
+}
+.qr-card img{width:100%; height:auto; border-radius:8px; border:1px solid rgba(255,255,255,0.02);}
+.qr-caption{font-size:11px; color:var(--muted); text-align:center}
+
+.channels{display:flex; flex-direction:column; gap:12px}
+.channel{
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  padding:12px 14px; border-radius:10px; display:flex; align-items:center; justify-content:space-between;
+  gap:12px; border:1px solid rgba(255,255,255,0.02);
+}
+.meta{display:flex; gap:12px; align-items:center}
+.tag{font-size:10px; color:#b6dcd2; padding:6px 8px; border-radius:6px; background:rgba(0,0,0,0.35);}
+.info{font-size:12px; color:var(--muted);}
+.name{font-size:11px; color:#9df5c0}
+
+.actions{display:flex; gap:8px}
+button.copy{
+  background:transparent; border:1px solid rgba(255,255,255,0.06); padding:8px 10px; border-radius:8px; cursor:pointer; font-size:11px; color:var(--muted);
+}
+button.copy:hover{border-color:var(--accent); color:var(--accent)}
+
+.sidebar{
+  display:flex; flex-direction:column; gap:10px;
+}
+nav.menu{background:var(--glass); padding:10px; border-radius:8px; border:1px dashed rgba(255,255,255,0.02)}
+nav.menu a{display:block; text-decoration:none; color:var(--muted); font-size:12px; padding:8px 10px; border-radius:6px}
+nav.menu a:hover{color:var(--accent)}
+
+.note{font-size:11px; color:#808b8f; padding:10px; border-radius:8px; background:rgba(255,255,255,0.01)}
+
+footer{grid-column:1/3; text-align:center; margin-top:8px; font-size:11px; color:#5e6a6c}
+
+/* responsive */
+@media (max-width:800px){
+  .wrap{grid-template-columns:1fr;}
+  header{flex-direction:column; align-items:flex-start; gap:8px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>HANZZ MARKET - Payment</h1>
+        <p class="lead">Pilih metode pembayaran lalu tekan salin untuk menyalin nomor/akun.</p>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;color:#7b8b8e">Tema: Hitam • Font: Arcade</div>
+      </div>
+    </header><div class="qr-card">
+  <div style="width:100%">
+    <img src="https://img1.pixhost.to/images/8430/637349226_zakkistore.jpg" alt="QRIS - HANZZ MARKET" />
+  </div>
+  <div class="qr-caption">QRIS (scan untuk transfer cepat). Jika gagal, gunakan salah satu nomor di kanan.</div>
+</div>
+
+<div class="sidebar">
+  <nav class="menu">
+    <strong style="font-size:11px;color:var(--accent)">Menu Saluran</strong>
+    <a href="https://whatsapp.com/channel/0029Vb1jrPD6WaKh1lWYVX0N" target="_blank">Channel WhatsApp HANZZ MARKET</a>
+  </nav>
+
+  <div class="note">
+    Tips: Tekan tombol SALIN di samping tiap metode untuk menyalin nomor. Gunakan fitur copy dari ponsel jika perlu.
+  </div>
+
+  <div style="display:flex;gap:8px;justify-content:center">
+    <button class="copy" id="downloadBtn">Download HTML</button>
+  </div>
+</div>
+
+<main>
+  <section class="channels">
+    <!-- Channels list -->
+    <div class="channel">
+      <div class="meta">
+        <div class="tag">QRIS</div>
+        <div>
+          <div class="info">Scan QR pada kiri</div>
+          <div class="name">Penerima: HANZZ MARKET</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="copy" data-copy="QRIS">Instruksi</button>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="meta">
+        <div class="tag">DANA</div>
+        <div>
+          <div class="info">085182340789</div>
+          <div class="name">Penerima: HANZZ MARKET</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="copy" data-copy="085182340789">SALIN</button>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="meta">
+        <div class="tag">GOPAY</div>
+        <div>
+          <div class="info">081215916322</div>
+          <div class="name">Penerima: HANZZ MARKET</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="copy" data-copy="081215916322">SALIN</button>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="meta">
+        <div class="tag">OVO</div>
+        <div>
+          <div class="info">085182340789</div>
+          <div class="name">Penerima: HANZZ MARKET</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="copy" data-copy="085182340789">SALIN</button>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>© HANZZ MARKET • Simpan bukti transfer dan konfirmasi lewat channel WhatsApp.</footer>
+
+  </div>  <script>
+    // Copy to clipboard with feedback
+    document.querySelectorAll('button.copy').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        const val = btn.getAttribute('data-copy');
+        if(!val){
+          // show small modal/instruction for QR
+          alert('Scan QR di sebelah kiri menggunakan aplikasi pembayaran Anda.');
+          return;
+        }
+        try{
+          await navigator.clipboard.writeText(val);
+          btn.textContent = 'Tersalin ✓';
+          setTimeout(()=>{btn.textContent='SALIN'},1500);
+        }catch(e){
+          // fallback for older browsers
+          const ta = document.createElement('textarea'); ta.value=val; document.body.appendChild(ta); ta.select();
+          try{ document.execCommand('copy'); btn.textContent='Tersalin ✓'; setTimeout(()=>{btn.textContent='SALIN'},1500);}catch(err){ alert('Salin manual: '+val);} ta.remove();
+        }
+      })
+    })
+
+    // Download current HTML
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([html],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='hanzz-payment.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    })
+  </script></body>
+</html>
