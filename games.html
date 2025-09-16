@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Arcade Game</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Press Start 2P',cursive;
+      background:radial-gradient(circle at center,#0a0a0a 0%,#000 100%);
+      color:#fff;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    /* Background grid effect */
+    .grid{
+      position:absolute;
+      top:0;left:0;right:0;bottom:0;
+      background:linear-gradient(#0ff2 1px,transparent 1px),
+                 linear-gradient(90deg,#0ff2 1px,transparent 1px);
+      background-size:40px 40px;
+      transform:perspective(500px) rotateX(60deg);
+      animation:moveGrid 6s linear infinite;
+      z-index:0;
+    }
+    @keyframes moveGrid{
+      from{background-position:0 0,0 0}
+      to{background-position:0 40px,40px 0}
+    }
+
+    h1{
+      font-size:28px;
+      color:#0ff;
+      text-shadow:0 0 6px #0ff,0 0 12px #0ff;
+      margin-bottom:40px;
+      z-index:1;
+    }
+
+    .menu{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      z-index:1;
+    }
+    .btn{
+      background:#111;
+      border:2px solid #0ff;
+      padding:14px 24px;
+      border-radius:8px;
+      color:#0ff;
+      text-decoration:none;
+      font-size:14px;
+      text-align:center;
+      box-shadow:0 0 10px #0ff2;
+      transition:all .2s;
+    }
+    .btn:hover{
+      background:#0ff;
+      color:#000;
+      text-shadow:none;
+    }
+
+    footer{
+      position:absolute;
+      bottom:20px;
+      font-size:10px;
+      color:#888;
+      z-index:1;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+
+  <h1>NEON ARCADE</h1>
+  <div class="menu">
+    <a href="#" class="btn">▶ START GAME</a>
+    <a href="#" class="btn">ℹ ABOUT</a>
+    <a href="#" class="btn">🏆 LEADERBOARD</a>
+  </div>
+
+  <footer>© 2025 Neon Arcade</footer>
+</body>
+</html>
